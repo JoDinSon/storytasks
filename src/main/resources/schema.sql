@@ -4,3 +4,13 @@ CREATE TABLE Task (
    points INT NOT NULL,
    PRIMARY KEY (id)
 );
+
+CREATE TABLE Session (
+   id INT,
+   topic varchar(255) NOT NULL,
+   notes varchar(255),
+   time_stamp timestamp NOT NULL,
+   taskId INT,
+   PRIMARY KEY (id),
+   FOREIGN KEY(taskId) REFERENCES Task(id)
+);
